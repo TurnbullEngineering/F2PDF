@@ -15,6 +15,7 @@ def reprint_pdf(
     destination_path: Path to the destination PDF file, directory must exist
     app: pywinauto.application.Application object, will be created if not provided, should be provided to reduce overhead
     """
+    # TODO: Gracefully close the application and all of its child windows if an error occurs
     if not app:
         app = pywinauto.application.Application().start(
             r"C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
